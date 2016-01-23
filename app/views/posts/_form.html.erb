@@ -1,0 +1,67 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+    <%end %>
+
+
+<div class="modal-body" style="width:55%; margin-left:80px">
+    <div class="post-preview">
+    <h1 class="post-title">Add Post</h1>
+    <br>
+</div>
+    <div class="well">
+<div class="container">
+    <div class="row">
+        <form role="form">
+            <div class="col-lg-6">
+                
+                <div class="form-group">
+                    <label for="InputName">Enter Name</label>
+                    <div class="input-group">
+                        <%= f.text_field :name, :placeholder => "Enter Full Name", :class => 'form-control' %>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputEmail">Choose category</label>
+                    <div class="input-group">
+                        <%= f.select( :category, options_for_select([ "Ruby","Python","Php"]), {} , {:class => "form-control"}) %>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputEmail">Post title</label>
+                    <div class="input-group">
+                        <%= f.text_area :title, :placeholder => "Title", :class => 'form-control' %>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputMessage">Post content</label>
+                    <div class="input-group">
+                        <%= f.text_area :matter, :placeholder => "Your content goes here..", :class => 'form-control' %>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group control-group">
+                <div><input type="submit" name="submit" id="submit" value="Post" class="btn btn-info pull-right" style="margin:10px"></div>
+                <div><input type="reset" name="reset" id="reset" value="Reset" class="btn btn-info pull-right" style="margin:10px"></div>
+              </div>
+            </div>
+        </form>
+        
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<% end %>

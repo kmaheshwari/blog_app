@@ -1,0 +1,70 @@
+
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="modal-body" style="width:55%; margin-left:80px">
+  <div class="post-preview">
+<h1 class="post-title">Log in</h1>
+</div>        
+<div class="well">
+<div class="container">
+    <div class="row">
+        <form role="form">
+            <div class="col-lg-6">
+                
+
+                <div class="form-group">
+                    <label for="InputName">Enter Email</label>
+                    <div class="input-group">
+                        <%= f.email_field :email, :placeholder => "E.g.123@example.com", :class => 'form-control', autofocus: true %>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="InputEmail">Password</label>
+                    <div class="input-group">
+                        <%= f.password_field :password, :placeholder => "********", :class => 'form-control' %>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                  
+                  <% if devise_mapping.rememberable? -%>
+                    <div class="input-group">
+                      <%= f.check_box :remember_me %>
+                      <label for="InputEmail"> Remember me</label>
+                    </div>
+                  <% end -%>
+
+                </div>
+                <div class ="row">
+                
+                
+                <div class="form-group control-group">
+                <div><input type="submit" name="submit" id="submit" value="Login" class="btn btn-info pull-right" style="margin:10px"></div>
+                <div><input type="reset" name="reset" id="reset" value="Reset" class="btn btn-info pull-right" style="margin:10px"></div>
+                </div>
+                <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+                    <span class= "glyphicon glyphicon-plus-sign pull-left"></span>
+                      <%= link_to "Sign up", new_registration_path(resource_name), :class => "pull-left" %><br />
+                    <% end -%>
+
+                    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'%>
+                    <span class= "glyphicon glyphicon-question-sign pull-left"></span>
+                      <%= link_to "Forgot your password?", new_password_path(resource_name), :class => "pull-left"  %><br />
+                <% end -%>
+
+              </div>
+            </div>
+        </form>
+        
+                
+            </div>
+        </div>
+        </div>
+        </div>
+    
+ <% end %>
+
+
+<%= render "devise/shared/links" %>

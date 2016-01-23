@@ -1,0 +1,21 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            	<% @output.each do |p| %>
+	            	<div class="post-preview">
+	                    <a href="post.html">
+	                        <h2 class="post-title">
+	                            <%= p.title %>
+	                        </h2>
+	                        <h3 class="post-subtitle">
+	                            <%= p.matter %>
+	                        </h3>
+	                    </a>
+	                    <p class="post-meta">Posted by <a href="#"><%= p.name %></a> on <%= p.created_at %></p>
+	                </div>
+	                <hr>
+				<%end%>
+			</div>
+		</div>
+	</div>
