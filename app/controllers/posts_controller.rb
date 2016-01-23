@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   end
 
   def full_post
-    @posts = Post.all
+    @post = Post.where("title in(?)",params[:title_name])
   end
   # POST /posts
   # POST /posts.json

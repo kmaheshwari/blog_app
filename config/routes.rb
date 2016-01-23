@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/home" => "posts#home"
   get "/out" => "posts#out"
   get "/show_all" => "posts#show"
+  get "/full_post" => "posts#full_post"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
