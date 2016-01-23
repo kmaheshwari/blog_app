@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAGA,UAIC;EAHC,WAAW,EAAE,sBAAsB;EACnC,GAAG,EAAE,mDAAmD;EACxD,GAAG,EAAE,kUAAkU",
-"sources": ["main.scss"],
-"names": [],
-"file": "posts.scss"
-}
