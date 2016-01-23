@@ -36,6 +36,9 @@ class PostsController < ApplicationController
     session[:option] = @cate
   end
 
+  def full_post
+    @posts = Post.all
+  end
   # POST /posts
   # POST /posts.json
   def create
