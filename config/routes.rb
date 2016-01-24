@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get "/edit" => "devise/registrations#edit"
     get "/login" => "devise/sessions#new"
+    get "/logout" => "devise/sessions#destroy"
   end
   devise_for :users
 

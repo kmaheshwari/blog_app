@@ -38,13 +38,12 @@
 
                             
           <% if user_signed_in? %>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Logged in as <%= current_user.email %>.<b class="caret"></b></a>
-              <ul class="dropdown-menu" >
-                <!-- <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li> -->
-                
-                <li><a href="/edit" style = "color:black;">Edit Profile</a></li>
-                <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', :style => "color:black;"  %></li>
+            <li>
+              <a href = "#"><%= current_user.email %></a></li> 
+              <!-- <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li> -->
+              
+                <li><a href="/edit">Edit<span class= "fa fa-edit"></span></a></li>
+                <li><a href="/logout">Log out<span class= "fa fa-sign-out"></span></a></li>
 
               </ul>
             </li>
